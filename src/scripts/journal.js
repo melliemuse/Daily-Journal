@@ -4,27 +4,27 @@
 
 console.log('You linked it! Good job!')
 
-const journalEntry = {
+const journalEntries = [
+    {
     date: '10/18/2019',
     concepts: 'Project 2 prep, Modular Coding, Pulling everything from book 2 together',
-    contents: 'Broke down how to create a fucntional search form that returns results from an external api using modular code', 
+    contents: 'Broke down how to create a functional search form that returns results from an external api using modular code', 
     mood: 'pretty good',
-}
-
-const journalEntry2 = {
+},
+ {
     date: '10/17/2019',
     concepts: 'Lab Day, APIs, Event Handlers, Vocab',
     contents: 'Project 2 prep, Modular Coding, Pulling everything from book 2 together',
-    contents: 'Broke down how to create a fucntional search form that returns results from an external api using modular code', 
+    contents: 'Broke down how to create a functional search form that returns results from an external api using modular code', 
     mood: 'kinda rough',
-}
-
-const journalEntry3 = {
+},
+{
     date: '10/16/2019',
     concepts: 'Event Handlers',
     contents: '',
     mood: 'good',
 }
+]
 
 // const journalEntry = {
 //     date: `${date}`,
@@ -32,7 +32,32 @@ const journalEntry3 = {
 //     contents: `${contents}`, 
 //     mood: `${mood}`,
 // }
-debugger
-let journalEntries = []
-journalEntries.push(journalEntry, journalEntry2, journalEntry3)
-console.log(journalEntries)
+// debugger
+// let journalEntries = []
+// journalEntries.push(journalEntry, journalEntry2, journalEntry3)
+
+/*
+    Purpose: To create, and return, a string template that
+    represents a single journal entry object as HTML
+
+    Arguments: journalEntry (object)
+*/
+const makeJournalEntryComponent = (journalEntry) => {
+    // Create your own HTML structure for a journal entry
+    return `
+    <h1>${journalEntry.concepts}</h1>
+    <h3>${journalEntry.date}</h3>
+    <p>${journalEntry.contents}</p>
+    <p>Mood: ${journalEntry.mood}</p>
+    `
+}
+
+const entryContainer = document.querySelector('.entryLog')
+
+const addJournalEntriesToDOM = (journalEntries) => {
+    journalEntries.forEach(journalEntry => {
+    entryContainer.innerHTML += makeJournalEntryComponent(journalEntry)
+    });
+}
+
+addJournalEntriesToDOM(journalEntries)
