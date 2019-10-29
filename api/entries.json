@@ -1,0 +1,24 @@
+{"entries": [
+    {
+    "id": 1,
+    "date": "10/18/2019",
+    "concepts": "Project 2 prep, Modular Coding, Pulling everything from book 2 together",
+    "contents": "Broke down how to create a functional search form that returns results from an external api using modular code", 
+    "mood": "pretty good"
+},
+ {
+    "id": 2, 
+    "date": "10/17/2019",
+    "concepts": "Lab Day, APIs, Event Handlers, Vocab",
+    "contents": "Project 2 prep, Modular Coding, Pulling everything from book 2 together",
+    "mood": "kinda rough"
+},
+{
+    "id": 3,
+    "date": "10/16/2019",
+    "concepts": "Event Handlers",
+    "contents": "",
+    "mood": "good"
+}
+]
+}
