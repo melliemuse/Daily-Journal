@@ -1,9 +1,9 @@
-fetch("http://localhost:3000/entries") // Fetch from the API
-    .then(entries => entries.json)  // Parse as JSON
-    .then(parsedEntries => {
-        // console.log(parsedEntries)
-        // addJournalEntriesToDOM(parsedEntries)
-    })
+
+const getData = () => {
+    return fetch("http://localhost:3000/entries") // Fetch from the API
+.then(entries => entries.json())  // Parse as JSON
+}
+
 
 const makeJournalEntryComponent = (entry) => {
     // Create your own HTML structure for a journal entry
@@ -23,3 +23,7 @@ const addJournalEntriesToDOM = (entries) => {
     });
 }
 
+getData()
+.then(parsedEntries => {
+    addJournalEntriesToDOM(parsedEntries)
+})
